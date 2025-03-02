@@ -164,30 +164,25 @@ const getNamesSortedByFriendsCount = users => {
   
   console.log(getNamesSortedByFriendsCount(users));
 
-// 10 ???
+// 10
 // Отримати масив всіх умінь всіх користувачів (поле skills), при цьому 
 // не має бути повторюваних умінь і вони повинні бути відсортовані в алфавітному порядку.
-
-const getuserskills = (users) => {
-  // const skills = users.map(user => user.skills)
-  // console.table(skills)
-  const skills = []
-  for (let i = 0; i < users.length; i++) {
-    const ele = users[i].skills
-    for (let a = 0; a < ele.length; a++) {
-      const skill = ele[a]
-      if (!skills.includes(skill)) {
-         skills.push(skill)
-      }
-    }
-  }
-  return skills.sort()
-}
-getuserskills(users)
+const allusers = users
+  .map((user) => user.skills)
+  .flat()
+  .sort()
+  .filter((value, index, self) => self.indexOf(value) === index);
+console.log(allusers);
 
 
 
-console.log(getuserskills(users))
+
+ 
+ 
+
+ 
+
+
 
 
   
