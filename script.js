@@ -168,11 +168,12 @@ const getNamesSortedByFriendsCount = users => {
 // Отримати масив всіх умінь всіх користувачів (поле skills), при цьому 
 // не має бути повторюваних умінь і вони повинні бути відсортовані в алфавітному порядку.
 const allusers = users
-  .map((user) => user.skills)
+  .map(user => user.skills)
   .flat()
   .sort()
-  .filter((value, index, self) => self.indexOf(value) === index);
-console.log(allusers);
+  .filter((value, index, self) => self.indexOf(value) === index);  // -- з цим допоміг чатгпт бо я не поняв як можете пояснити
+ console.log(allusers);
+
 
 
 
